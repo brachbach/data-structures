@@ -18,7 +18,7 @@ stackMethods.push = function(value) {
 
 stackMethods.pop = function(value) {
   if (this.length > 0) {
-    var popped = this.data[this.length-1];
+    var popped = this.data[this.length - 1];
     this.length--;
     return popped;
   }
