@@ -65,6 +65,6 @@ describe('graph', function() {
     graph.addNode(5);
     graph.addEdge(5, 4);
     graph.removeNode(4);
-    expect(graph.hasEdge(5, 4).to.equal(false));
+    expect(graph.hasEdge(5, 4)).to.equal(false);
   });
 });
