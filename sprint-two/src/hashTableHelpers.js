@@ -11,6 +11,29 @@
 //   limitedArray.set(3, 'hi');
 //   limitedArray.get(3); // returns 'hi'
 
+var tupleArray = function () {
+  var newTupleArray = {};
+  var storage = [];
+  newTupleArray.set = function (key, value) {
+    for (var i = 0; i < storage.length; i++) {
+      if (storage[i][0] === key) {
+        storage[i][1] = value;
+        return;
+      }
+    }
+    storage.push([key, value]);
+  };
+  newTupleArray.get = function (key) {
+    for (var i = 0; i < storage.length; i++) {
+      if (storage[i][0] === key) {
+        return storage[i][1];
+      }
+    }
+    return undefined;
+  };
+  return newTupleArray;
+};
+
 var LimitedArray = function(limit) {
 
   var storage = [];
