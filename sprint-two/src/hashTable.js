@@ -7,10 +7,7 @@ var HashTable = function() {
 
 HashTable.prototype.insert = function(k, v) {
   var index = getIndexBelowMaxForKey(k, this._limit);
-  var element = this.retrieve(index);
-  // if (v === 'val1') {
-  //   debugger;
-  // }
+  var element = this._storage.get(index);
   if (!element) {
     var newObject = {};
     newObject[k] = v;
@@ -20,12 +17,13 @@ HashTable.prototype.insert = function(k, v) {
   }
 };
 
+//retrieve takes in keys, returns values
 HashTable.prototype.retrieve = function(k) {
   var index = getIndexBelowMaxForKey(k, this._limit);
-  if (k === 'val2') {
-    debugger;
-  }
-  return this._storage.get(index) ? this._storage.get(index)[k] : undefined;
+  if (this._storage.get(index)) {
+    return this._storage.get(index)[k];
+  } 
+  return undefined;
 };
 
 HashTable.prototype.remove = function(k) {
