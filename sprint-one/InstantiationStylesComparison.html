@@ -6,17 +6,17 @@
     </style>
     <script src="../lib/jquery/jquery.js"></script>
     <script src="../lib/underscore/underscore.js"></script>
-    <script src="./src/functional/queue.js"></script>
+<!--     <script src="./src/functional/queue.js"></script> -->
     <script src="./src/functional/stack.js"></script>
-<!--     <script src="./src/functional-shared/queue.js"></script> -->
+    <script src="./src/functional-shared/queue.js"></script>
     <script src="./src/functional-shared/stack.js"></script>
 <!--     <script src="./src/prototypal/queue.js"></script> -->
-<!--     <script src="./src/prototypal/stack.js"></script>
-    <script src="./src/pseudoclassical/queue.js"></script>
-    <script src="./src/pseudoclassical/stack.js"></script> -->
+    <script src="./src/prototypal/stack.js"></script>
+<!--     <script src="./src/pseudoclassical/queue.js"></script>
+ -->    <script src="./src/pseudoclassical/stack.js"></script>
     <script>
       var array = [];
-      var iterations = 2000000;
+      var iterations = 500000;
       for(var i=0; i<iterations; i++) {
         array.push(Queue());
       }
@@ -34,8 +34,24 @@ prototyoal: 705
 pseudoclassical: 313
 
 For 1M iterations, no storage of results:
-functional-shared: 1533-->
+
+-->
 
 
 <!-- storage
-functional -->
+functional:
+  time: 1439
+  size: 196 mb
+
+functional shared:
+  time: 1062
+  size: 62 mb
+
+prototypal:
+  time: 710 
+  size: 62 mb
+
+pseudoclassical
+  time: 153
+  size: 8.6mb
+  -->
